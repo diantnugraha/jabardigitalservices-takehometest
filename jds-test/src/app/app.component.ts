@@ -16,7 +16,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.service.fetchDataAllData().then(data => {
       this.alldata = data
-      console.log(this.alldata, 'dari home');
     });
   }
 }

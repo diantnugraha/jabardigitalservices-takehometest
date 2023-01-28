@@ -72,7 +72,7 @@ private drawChart(allcount:any): void {
   .data(pie(allcount))
   .enter()
   .append('text')
-  .text((d: any)=> d.data.jumlah)
+  .text((d: any)=> d.data.tahun)
   .attr("transform", (d: any) => "translate(" + labelLocation.centroid(d) + ")")
   .style("text-anchor", "middle")
   .style("font-size", 15);
@@ -92,7 +92,6 @@ ngOnInit(): void {
       this.allcount.push({"tahun":'2020',"jumlah": this.count2020, "color":'#e78ac3'})
       this.count2021 = res.data.data.filter((x:any) => x.tahun === 2021).reduce((sum:any, x:any) => sum + x.jumlah_nelayan, 0);
       this.allcount.push({"tahun":'2021',"jumlah": this.count2021, "color":'#a6d854'})
-      console.log(this.allcount, 'dari allcount');
       this.drawChart(this.allcount);
   })
   
